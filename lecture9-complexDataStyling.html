@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>D3 Sandbox</title>
+    <script src="js/d3.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <h1>Top Exercise Methods</h1>
+    <ul id="items">
+        <li class="item">Running</li>
+        <li class="item">Elliptical</li>
+        <li class="item">Bike</li>
+        <li class="item">Free Weights</li>
+        <li class="item">Weighted Machines</li>
+    </ul>
+
+    <script>
+
+    // var styles = ['red', 'blue', 'green', 'yellow', 'gray'];
+    // d3.selectAll('.item')
+    //     .data(styles)
+    //     .style({
+    //         'font-size': '24px',
+    //         'padding' : '5px',
+    //         'margin': '4px',
+    //         'list-style': 'none',
+    //         'background': function(d){
+    //             return d;
+    //         }
+    //     })
+
+    var styles = [
+        {
+            'background': 'red',
+            'color': 'white',
+            'width': 35
+        },
+        {
+            'background': 'blue',
+            'color': 'white',
+            'width': 5
+        },
+        {
+            'background': 'green',
+            'color': 'white',
+            'width': 20
+        },
+        {
+            'background': 'yellow',
+            'color': 'black',
+            'width': 30
+        },
+        {
+            'background': 'gray',
+            'color': 'white',
+            'width': 10
+        }
+    ];
+    d3.selectAll('.item')
+    .data(styles)
+    .style({
+        'font-size': '16px',
+        'padding' : '5px',
+        'margin': '4px',
+        'list-style': 'none',
+        'background': function(d){
+            return d.background;
+        },
+        'color': function(d){
+            return d.color;
+        },
+        'width': function(d){
+            return d.width+'%';
+        }
+    })
+    </script>
+</body>
+</html>

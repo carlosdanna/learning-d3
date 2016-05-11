@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>D3 Learning</title>
+    <script src="js/d3.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <p>this is a paragraph</p>
+    <ul id="items">
+        <li class="item">This is an item</li>
+        <li class="item">This is an item</li>
+        <li class="item">This is an item</li>
+        <li class="item">This is an item</li>
+        <li class="item">This is an item</li>
+        <li class="item">This is an item</li>
+        <li class="item">This is an item</li>
+        <li class="item">This is an item</li>
+        <li class="item">This is an item</li>
+        <li class="item">This is an item</li>
+    </ul>
+
+    <script>
+
+    //Ads a span the the second element of the list
+    d3.select('.item:nth-child(2n)')
+        .append('span').html('<strong> - This is the second element</strong>')
+        .style('color', 'red');
+
+    //adds a new element in the 3rd position of the list
+    d3.select('#items')
+        .insert('li', ':nth-child(3n)')
+        .classed('item', true)
+        .html('This is a new item');
+
+    //removes the 3rd element in the list
+    d3.select('.item:nth-child(3n)').remove();
+
+    //Add the attribute class = 'heading'
+    d3.select(h1).attr('class', 'heading');
+
+    //if the class has another class it ads this one to the list of classes
+    d3.select(h1).classed('heading', true);
+    </script>
+</body>
+</html>
